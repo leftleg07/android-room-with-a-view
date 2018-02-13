@@ -42,10 +42,15 @@ public class WordRepository {
         mAllWords = mWordDao.getAlphabetizedWords();
     }
 
+    WordRepository(WordDao wordDao) {
+        mWordDao = wordDao;
+        mAllWords = mWordDao.getAlphabetizedWords();
+    }
+
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
     LiveData<List<Word>> getAllWords() {
-        return mAllWords;
+        return mWordDao.getAlphabetizedWords();
     }
 
     // You must call this on a non-UI thread or your app will crash.

@@ -16,6 +16,7 @@ package com.example.android.roomwordssample;
  * limitations under the License.
  */
 
+import android.arch.core.executor.testing.InstantTaskExecutorRule;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -50,7 +51,7 @@ public class WordDaoTest {
     private WordRoomDatabase mDb;
 
     @Before
-    public void createDb() {
+    public void setup() {
         Context context = InstrumentationRegistry.getTargetContext();
         // Using an in-memory database because the information stored here disappears when the
         // process is killed.
