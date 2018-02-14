@@ -8,6 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:' + ANDROID_GRADLE_VERSION
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:' + SONARQUBE_VERSION
         
 
         // NOTE: Do not place your application dependencies here; they belong
